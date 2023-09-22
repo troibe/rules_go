@@ -7,11 +7,11 @@ package rules_go
 
 import (
 	_ "github.com/gogo/protobuf/proto"
-	_ "github.com/golang/mock/mockgen"
 	_ "github.com/golang/protobuf/protoc-gen-go"
+	_ "go.uber.org/mock/mockgen"
 	_ "golang.org/x/net/context"
 	_ "google.golang.org/genproto/protobuf/api"
 	_ "google.golang.org/grpc"
-	_ "google.golang.org/protobuf/cmd/protoc-gen-go"
 	_ "google.golang.org/grpc/cmd/protoc-gen-go-grpc"
+	_ "google.golang.org/protobuf/cmd/protoc-gen-go"
 )

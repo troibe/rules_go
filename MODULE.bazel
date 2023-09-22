@@ -34,7 +34,6 @@ go_deps.from_file(go_mod = "//:go.mod")
 use_repo(
     go_deps,
     "com_github_gogo_protobuf",
-    "com_github_golang_mock",
     "com_github_golang_protobuf",
     "org_golang_google_genproto",
     "org_golang_google_grpc",
@@ -44,4 +43,5 @@ use_repo(
     "org_golang_x_tools",
     # Exported by gazelle specifically for rules_go.
     "bazel_gazelle_go_repository_config",
+    "org_uber_go_mock",
 )

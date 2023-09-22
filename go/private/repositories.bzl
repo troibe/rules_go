@@ -258,22 +258,22 @@ def go_rules_dependencies(force = False):
         patch_args = ["-p1"],
     )
 
-    # releaser:upgrade-dep golang mock
+    # releaser:upgrade-dep uber-go mock
     _maybe(
         http_archive,
-        name = "com_github_golang_mock",
-        # v1.7.0-rc.1, latest as of 2023-12-18
+        name = "org_uber_go_mock",
+        # v0.4.0, latest as of 2024-04-23
         urls = [
-            "https://mirror.bazel.build/github.com/golang/mock/archive/refs/tags/v1.7.0-rc.1.zip",
-            "https://github.com/golang/mock/archive/refs/tags/v1.7.0-rc.1.zip",
+            "https://mirror.bazel.build/github.com/uber-go/mock/archive/refs/tags/v0.4.0.zip",
+            "https://github.com/uber-go/mock/archive/refs/tags/v0.4.0.zip",
         ],
         patches = [
-            # releaser:patch-cmd gazelle -repo_root . -go_prefix github.com/golang/mock -go_naming_convention import_alias
-            Label("//third_party:com_github_golang_mock-gazelle.patch"),
+            # releaser:patch-cmd gazelle -repo_root . -go_prefix go.uber.org/mock -go_naming_convention import_alias
+            Label("//third_party:org_uber_go_mock-gazelle.patch"),
         ],
         patch_args = ["-p1"],
-        sha256 = "5359c78b0c1649cf7beb3b48ff8b1d1aaf0243b22ea4789aba94805280075d8e",
-        strip_prefix = "mock-1.7.0-rc.1",
+        sha256 = "63bb892629fe1ca3a0c4fb001b2b3e64bdc9a5589937c69fbe03fe652269c5d9",
+        strip_prefix = "mock-0.4.0",
     )
 
     # This may be overridden by go_register_toolchains, but it's not mandatory
